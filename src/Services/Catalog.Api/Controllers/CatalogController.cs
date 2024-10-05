@@ -1,5 +1,6 @@
 ﻿using Catalog.Api.Interface.Manager;
 using Catalog.Api.Model;
+using CoreApiResponse;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -8,7 +9,7 @@ namespace Catalog.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class CatalogController : ControllerBase
+    public class CatalogController : BaseController
     {
         IProductManager _productManager;
         public CatalogController(IProductManager productManager)
@@ -24,11 +25,11 @@ namespace Catalog.Api.Controllers
                 var products = _productManager.GetAll();
                 if (products == null) 
                 {
-                    return NotFound();
+                    return CustomResult("Data Not Found",HttpStatusCode.NotFound);
                 }
                 else
                 {
-                    return Ok(products);
+                    return CustomResult("Data Load Succssfully",products);
                 }
                 
             }
