@@ -18,6 +18,7 @@ namespace Catalog.Api.Controllers
         }
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>),(int)HttpStatusCode.OK)]
+        [ResponseCache(Duration =10)]
         public IActionResult GetProduct() 
         {
             try
@@ -36,7 +37,7 @@ namespace Catalog.Api.Controllers
             catch (Exception ex)
             {
 
-                throw ex;
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
             }
             
         }
