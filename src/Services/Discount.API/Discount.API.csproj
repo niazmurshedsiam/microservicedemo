@@ -11,10 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.19" />
     <PackageReference Include="Npgsql" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+	<PackageReference Include="CoreApiResponse" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
