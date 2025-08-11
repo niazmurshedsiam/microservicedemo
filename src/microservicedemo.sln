@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discounts.Grpc", "Services\Discounts.Grpc\Discounts.Grpc.csproj", "{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{A8F32663-B650-455C-BB63-8ED801D0AA01} = {08488329-2F6E-4031-8088-89067921D383}
 		{A1410DF3-0BA7-4640-8239-F95A41AD0B5D} = {08488329-2F6E-4031-8088-89067921D383}
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A0D9FC33-3768-4134-8EDD-CF6A56E386E9} = {08488329-2F6E-4031-8088-89067921D383}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F07861-0FCF-4B57-BCCD-08180D0ACCA6}
