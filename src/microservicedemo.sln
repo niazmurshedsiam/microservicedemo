@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Bask
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.API", "Services\Discount.API\Discount.API.csproj", "{A8F32663-B650-455C-BB63-8ED801D0AA01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.Grpc", "Services\Discount.Grpc\Discount.Grpc.csproj", "{A1410DF3-0BA7-4640-8239-F95A41AD0B5D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}"
@@ -37,10 +35,6 @@ Global
 		{A8F32663-B650-455C-BB63-8ED801D0AA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F32663-B650-455C-BB63-8ED801D0AA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8F32663-B650-455C-BB63-8ED801D0AA01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1410DF3-0BA7-4640-8239-F95A41AD0B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1410DF3-0BA7-4640-8239-F95A41AD0B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1410DF3-0BA7-4640-8239-F95A41AD0B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1410DF3-0BA7-4640-8239-F95A41AD0B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}.Release|Any CPU.ActiveCfg = Release|Any CPU
