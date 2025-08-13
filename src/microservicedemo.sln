@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.API", "Services\Di
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{8C1CB6E6-D3AF-48AF-96A8-8C62D468F718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discounts.Grpc", "Services\Discounts.Grpc\Discounts.Grpc.csproj", "{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discounts.Grpc", "Services\Discounts.Grpc\Discounts.Grpc.csproj", "{A0D9FC33-3768-4134-8EDD-CF6A56E386E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{E304735C-8650-41A5-B79F-8F9603D2CB8E}"
 EndProject
