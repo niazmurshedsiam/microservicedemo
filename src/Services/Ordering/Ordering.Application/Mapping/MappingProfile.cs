@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ordering.Application.Features.Orders.Commands;
+using Ordering.Application.Features.Orders.Commands.CreateOrder;
 using Ordering.Application.Features.Orders.Queries.GetOrderByUserName;
 using Ordering.Domain.Models;
 using System;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Orders.Commands
+namespace Ordering.Application.Features.Orders.Commands.CreateOrder
 {
     public class CreateOrderCommand:IRequest<bool>
     {
