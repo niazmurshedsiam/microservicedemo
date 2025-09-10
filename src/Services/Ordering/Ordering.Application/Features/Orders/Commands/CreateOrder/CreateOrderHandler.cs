@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Ordering.Application.Contacts.Infrastructure;
 using Ordering.Application.Contacts.Persistence;
+using Ordering.Application.Models;
 using Ordering.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -14,15 +16,25 @@ namespace Ordering.Application.Features.Orders.Commands.CreateOrder
     {
         public IOrderRepository _repository;
         public IMapper _mapper;
-        public CreateOrderHandler(IOrderRepository repository, IMapper mapper) 
+        public IEmailService _emailService;
+        public CreateOrderHandler(IOrderRepository repository, IMapper mapper, IEmailService emailService) 
         {
             _repository = repository;
             _mapper = mapper;
+            _emailService = emailService;
         }
         public async Task<bool> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var oder = _mapper.Map<List<Order>>(request);
-            return await _repository.AddAsync(oder);
+            var order = _mapper.Map<Order>(request);
+            bool isOrderPlaced =  await _repository.AddAsync(order);
+            if (isOrderPlaced) {
+                Email email = new Email();
+                email.Subject = "Your Order has been placed";
+                email.To = order.UserName;
+                email.Body = $"Dear {order.FirstName + " " + order.LastName} <br/><br/> We are excited for you to reacived your order #{order.Id} and with notify you one it's way. <br/>";
+                await _emailService.SendEmailAsync(email);
+            }
+            return isOrderPlaced;
         }
     }
 }
