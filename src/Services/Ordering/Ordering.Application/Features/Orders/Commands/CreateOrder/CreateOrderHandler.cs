@@ -28,7 +28,7 @@ namespace Ordering.Application.Features.Orders.Commands.CreateOrder
             var order = _mapper.Map<Order>(request);
             bool isOrderPlaced =  await _repository.AddAsync(order);
             if (isOrderPlaced) {
-                Email email = new Email();
+                EmailMessage email = new EmailMessage();
                 email.Subject = "Your Order has been placed";
                 email.To = order.UserName;
                 email.Body = $"Dear {order.FirstName + " " + order.LastName} <br/><br/> We are excited for you to reacived your order #{order.Id} and with notify you one it's way. <br/>";

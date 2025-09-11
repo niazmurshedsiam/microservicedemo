@@ -9,6 +9,6 @@ namespace Ordering.Application.Contacts.Infrastructure
 {
     public interface IEmailService
     {
-        Task<bool> SendEmailAsync(Email email);
+        Task<bool> SendEmailAsync(EmailMessage emailMessage);
     }
 }
