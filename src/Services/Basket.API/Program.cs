@@ -16,6 +16,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 builder.Services.AddGrpcClient<DiscountsProtoService.DiscountsProtoServiceClient>(options=> options.Address =new Uri(builder.Configuration.GetValue<string>("GrpcSettings:DiscountGrpcUrl")));
 builder.Services.AddScoped<DiscountGrpcService>();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 //RabbitMQ Configuration
