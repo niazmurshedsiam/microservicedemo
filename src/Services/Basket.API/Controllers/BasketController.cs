@@ -70,7 +70,19 @@ namespace Basket.API.Controllers
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
             }
         }
+        [HttpPost]
+        [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> CheckOut( [FromBody] BasketCheckout basketCheckout)
+        {
+            var basket = await _basketRepository.GetBasket(basketCheckout.UserName);
+            if(basket == null)
+            {
+                return CustomResult("Basket Data Empty.", HttpStatusCode.BadRequest);
+            }
 
-
+            //Remove Basket
+            await _basketRepository.DeleteBasket(basket.UserName);
+            return CustomResult("Order Has Been Placed.");
+        }
     }
 }
