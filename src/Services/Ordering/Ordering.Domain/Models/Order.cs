@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ordering.Domain.Models
 {
-    public class Order:EntityBase
+    public class Order : EntityBase
     {
         public int Id { get; set; }
         public string UserName { get; set; }
@@ -27,7 +27,8 @@ namespace Ordering.Domain.Models
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
-        public string Expiration { get; set; }
+        public string Expiraton { get; set; }
         public int PaymentMethod { get; set; }
+
     }
 }

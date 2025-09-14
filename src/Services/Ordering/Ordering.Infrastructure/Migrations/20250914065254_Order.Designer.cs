@@ -12,8 +12,8 @@ using Ordering.Infrastructure.Persistence;
 namespace Ordering.Infrastructure.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
-    [Migration("20250914061909_intial")]
-    partial class intial
+    [Migration("20250914065254_Order")]
+    partial class Order
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,7 +64,7 @@ namespace Ordering.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Expiration")
+                    b.Property<string>("Expiraton")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

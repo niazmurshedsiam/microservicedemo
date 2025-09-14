@@ -29,7 +29,8 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
         public string CVV { get; set; }
         public string Expiration { get; set; }
         public int PaymentMethod { get; set; }
-
+        public string CreatedBy { get; set; } 
+        public DateTime? CreatedDate { get; set; }
         public string UpdatedBy { get; set; } = string.Empty;
         public DateTime? UpdatedDate { get; set; }
     }

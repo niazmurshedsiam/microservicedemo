@@ -8,7 +8,6 @@ namespace Ordering.Application.Features.Orders.Queries.GetOrderByUserName
 {
     public class OrderVm
     {
-        public int Id { get; set; }
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
 
@@ -26,7 +25,7 @@ namespace Ordering.Application.Features.Orders.Queries.GetOrderByUserName
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
-        public string Expiration { get; set; }
+        public string Expiraton { get; set; }
         public int PaymentMethod { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace Ordering.Infrastructure.Persistence
                 CVV = "Test",
                 CardName = "Test",
                 CardNumber = "Test",
-                Expiration = "Test",
+                Expiraton = "Test",
                 PaymentMethod = 1,
                 CreatedBy = "Test",
                 CreatedDate = DateTime.Now,

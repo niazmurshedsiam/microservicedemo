@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ordering.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class intial : Migration
+    public partial class Order : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,7 +30,7 @@ namespace Ordering.Infrastructure.Migrations
                     CardName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CVV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Expiration = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Expiraton = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PaymentMethod = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),

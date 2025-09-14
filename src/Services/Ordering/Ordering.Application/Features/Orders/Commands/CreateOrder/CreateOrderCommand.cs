@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ordering.Application.Features.Orders.Commands.CreateOrder
 {
-    public class CreateOrderCommand:IRequest<bool>
+    public class CreateOrderCommand : IRequest<bool>
     {
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
@@ -26,7 +26,7 @@ namespace Ordering.Application.Features.Orders.Commands.CreateOrder
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
-        public string Expiration { get; set; }
+        public string Expiraton { get; set; }
         public int PaymentMethod { get; set; }
     }
 }

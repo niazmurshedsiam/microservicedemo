@@ -61,7 +61,7 @@ namespace Ordering.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Expiration")
+                    b.Property<string>("Expiraton")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

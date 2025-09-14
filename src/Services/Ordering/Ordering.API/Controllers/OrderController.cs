@@ -5,6 +5,7 @@ using Ordering.Application.Features.Orders.Commands.CreateOrder;
 using Ordering.Application.Features.Orders.Commands.DeleteOrder;
 using Ordering.Application.Features.Orders.Commands.UpdateOrder;
 using Ordering.Application.Features.Orders.Queries.GetOrderByUserName;
+using QuickMailer;
 using System.Net;
 
 namespace Ordering.API.Controllers
@@ -21,85 +22,78 @@ namespace Ordering.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<OrderVm>), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult>GetOrderByUserName(string userName)
+        public async Task<IActionResult> GetOrderByUserName(string userName)
         {
             try
             {
-                var order = await _mediator.Send(new GetOrderByUserQuery(userName));
-                return CustomResult("Order load successfully.",order);
+                var orders = await _mediator.Send(new GetOrderByUserQuery(userName));
+                return CustomResult("Order load successfully.", orders);
+
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
-              return  CustomResult(ex.Message,HttpStatusCode.BadRequest);
-                
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
             }
         }
 
         [HttpPost]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> CreateOrder(CreateOrderCommand createOrderCommand)
+        public async Task<IActionResult> CreateOrder(CreateOrderCommand orderCommand)
         {
             try
             {
-                var isOrderPlaced = await _mediator.Send(createOrderCommand);
+                var isOrderPlaced = await _mediator.Send(orderCommand);
                 if (isOrderPlaced)
                 {
-                    return CustomResult("Order has been Placed.");
+                    return CustomResult("Order has been placed.");
                 }
-                else {
-                    return CustomResult("Order Not Placed.",HttpStatusCode.BadRequest);
-                }
+
+                return CustomResult("Order not placed.", HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
-
             }
         }
 
+
         [HttpPut]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> UpdateOrder(UpdateOrderCommand updateOrderCommand)
+        public async Task<IActionResult> UpdateOrder(UpdateOrderCommand orderCommand)
         {
             try
             {
-                var isOrderModify = await _mediator.Send(updateOrderCommand);
-                if (isOrderModify)
+                var isModified = await _mediator.Send(orderCommand);
+                if (isModified)
                 {
-                    return CustomResult("Order has been Modify.");
+                    return CustomResult("Order has been modified.");
                 }
-                else
-                {
-                    return CustomResult("Order Modify Fail.", HttpStatusCode.BadRequest);
-                }
+
+                return CustomResult("Order modified failed.", HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
-
             }
         }
 
         [HttpDelete]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> DeleteOrder(int id)
+        public async Task<IActionResult> DeleteOrder(int orderId)
         {
             try
             {
-                var isOrderDelete = await _mediator.Send(new DeleteOrderCommand { Id = id});
-                if (isOrderDelete)
+                var isDelete = await _mediator.Send(new DeleteOrderCommand() { Id = orderId });
+                if (isDelete)
                 {
-                    return CustomResult("Order has been Delete.");
+                    return CustomResult("Order has been deleted.");
                 }
-                else
-                {
-                    return CustomResult("Order Delete Fail.", HttpStatusCode.BadRequest);
-                }
+
+                return CustomResult("Order deleted failed.", HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
-
             }
         }
     }
