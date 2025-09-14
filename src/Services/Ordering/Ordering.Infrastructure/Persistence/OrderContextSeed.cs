@@ -16,13 +16,23 @@ namespace Ordering.Infrastructure.Persistence
             new Order
             {
                 Id = 1,
-                UserName = "Test",
-                FirstName = "Test",
-                LastName = "Test",
-                EmailAddress = "test@gmail.com",
-                Address = "Test",
-                TotalPrice = 170,
-                City = "Dhaka"
+                UserName = "faisalcse3@gmail.com",
+                FirstName = "Md",
+                LastName = "Faisal",
+                EmailAddress = "faisalcse3@gmail.com",
+                Address = "Dhaka",
+                TotalPrice = 100,
+                City = "Dhaka",
+                CVV = "Test",
+                CardName = "Test",
+                CardNumber = "Test",
+                Expiration = "Test",
+                PaymentMethod = 1,
+                CreatedBy = "Test",
+                CreatedDate = DateTime.Now,
+                PhoneNumber = "01700000000",
+                State = "Test",
+                ZipCode = "Test"
             };
         }
     }
