@@ -1,7 +1,10 @@
-﻿using Basket.API.GrpcServices;
+﻿using AutoMapper;
+using Basket.API.GrpcServices;
 using Basket.API.Models;
 using Basket.API.Repository;
 using CoreApiResponse;
+using EventBus.Messages.Events;
+using MassTransit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -14,10 +17,14 @@ namespace Basket.API.Controllers
     {
         IBasketRepository _basketRepository;
         DiscountGrpcService _discountGrpcService;
-        public BasketController(IBasketRepository basketRepository, DiscountGrpcService discountGrpcService)
+        public readonly IPublishEndpoint _publishEndpoint;
+        IMapper _mapper;
+        public BasketController(IBasketRepository basketRepository, DiscountGrpcService discountGrpcService, IPublishEndpoint publishEndpoint,IMapper mapper)
         {
             _basketRepository = basketRepository;
             _discountGrpcService = discountGrpcService;
+            _publishEndpoint = publishEndpoint;
+            _mapper = mapper;
         }
         [HttpGet]
         [ProducesResponseType(typeof(ShoppingCart),(int)HttpStatusCode.OK)]
@@ -79,6 +86,11 @@ namespace Basket.API.Controllers
             {
                 return CustomResult("Basket Data Empty.", HttpStatusCode.BadRequest);
             }
+
+            //Send checkout event to RabbitMQ
+            var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
+            eventMessage.TotalPrice = basket.TotalPrice;
+            await _publishEndpoint.Publish(eventMessage);
 
             //Remove Basket
             await _basketRepository.DeleteBasket(basket.UserName);
