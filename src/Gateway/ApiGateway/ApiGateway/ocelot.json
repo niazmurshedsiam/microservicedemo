@@ -1,16 +1,28 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/values",
+      "DownstreamPathTemplate": "/api/catalog/GetProduct",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5209
+          "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/values",
-      "UpstreamHttpMethod": ["GET"]
+      "UpstreamPathTemplate": "/api/catalog/GetProduct",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/catalog/GetByCategory",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalog/GetByCategory",
+      "UpstreamHttpMethod": [ "GET" ]
     }
   ],
   "GlobalConfiguration": {
