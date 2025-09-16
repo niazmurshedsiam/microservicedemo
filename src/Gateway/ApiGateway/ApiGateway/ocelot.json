@@ -10,7 +10,14 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Catalog/{DynmicRoute}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [], 
+        "EnableRateLimiting": true,
+        "Limit": 1,
+        "Period": "1s",
+        "PeriodTimespan": 1 
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Basket/{DynmicRoute}",
